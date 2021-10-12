@@ -19,4 +19,4 @@ Other goals
 - The layout must dynamically adjust while the user drags cells arounds.
 - The user must be able to long-press on cell to present a standard iOS context menu.
 
-Additional details can be found in this [blog post](https://briancoyner.github.io/articles/2021-10-05-reorderable-collection-view).
+Additional details can be found in this [blog post](https://briancoyner.github.io/articles/2021-10-12-reorderable-collection-view).
