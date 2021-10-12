@@ -7,7 +7,7 @@ This demo shows a few techniques on how to build a re-ordable grid view based on
 Here are the main UIKit APIs used by this demo:
 
 - `UICollectionView`s compositional layout API.
-- `UICollectionViewDiffableDataSource` and its built in reordering support.
+- `UICollectionViewDiffableDataSource` and its reordering support.
 - `UIContextMenuConfiguration` for presenting optional menus from each displayed cell.
   
 The view is driven by a two-column layout that supports two cell sizes:
