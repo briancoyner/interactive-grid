@@ -281,7 +281,7 @@ extension InteractiveGridViewController: UICollectionViewDelegate {
 
             let model = Model(value: snapshot.numberOfItems + 1, style: style, allowsContextMenu: true)
             snapshot.insertItems([model], afterItem: afterItem)
-            dataSource.applySnapshotUsingReloadData(snapshot)
+            dataSource.apply(snapshot)
         }
     }
 
