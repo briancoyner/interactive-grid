@@ -443,15 +443,25 @@ extension InteractiveGridViewController {
 
     private func lazyDataSource() -> UICollectionViewDiffableDataSource<Section, Model> {
 
-        // There's not a lot to setting up a diffable data source.
-
-        let cellRegistration = UICollectionView.CellRegistration<GridCell, Model> { (cell, indexPath, identifier) in
-            cell.label.text = "\(identifier.value)"
-            cell.subtitle.text = identifier.allowsContextMenu ? "long press for menu" : "no menu"
-        }
-
+        let cellRegistration = makeCellRegistration()
         return UICollectionViewDiffableDataSource<Section, Model>(collectionView: collectionView) { (collectionView, indexPath, identifier) in
             return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: identifier)
+        }
+    }
+
+    private func makeCellRegistration() -> UICollectionView.CellRegistration<UICollectionViewCell, Model> {
+        return UICollectionView.CellRegistration<UICollectionViewCell, Model> { (cell, indexPath, model) in
+            cell.contentConfiguration = UIHostingConfiguration {
+                GridCell(model: model)
+            }
+            .background(background: {
+                RoundedRectangle(cornerRadius: 16)
+                    .fill(Color(uiColor: .systemBackground))
+            })
+
+            // The cell's contentView `CALayer` corner radius is set to the same radius as the background to ensure
+            // that the "drag preview" background does not show through.
+            cell.contentView.layer.cornerRadius = 16
         }
     }
 }

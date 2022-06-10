@@ -14,9 +14,10 @@
 		5D42DA15270BE00D0055D1E4 /* InteractiveGridViewControllerRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D42DA0F270BE00D0055D1E4 /* InteractiveGridViewControllerRepresentable.swift */; };
 		5D42DA16270BE00D0055D1E4 /* InteractiveGridViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D42DA10270BE00D0055D1E4 /* InteractiveGridViewController.swift */; };
 		5D42DA17270BE00D0055D1E4 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D42DA11270BE00D0055D1E4 /* Model.swift */; };
-		5D42DA18270BE00D0055D1E4 /* GridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D42DA12270BE00D0055D1E4 /* GridCell.swift */; };
+		5D42DA18270BE00D0055D1E4 /* GridCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D42DA12270BE00D0055D1E4 /* GridCollectionViewCell.swift */; };
 		5D42DA1C270BE0440055D1E4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D42DA1B270BE0440055D1E4 /* ContentView.swift */; };
 		5D42DA1E270BE0560055D1E4 /* InteractiveGridApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D42DA1D270BE0560055D1E4 /* InteractiveGridApp.swift */; };
+		5D921DDE2853FF59007C0EE4 /* GridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D921DDD2853FF59007C0EE4 /* GridCell.swift */; };
 		5DDC6446270DDFDD0059AA6D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5DDC6445270DDFDD0059AA6D /* README.md */; };
 /* End PBXBuildFile section */
 
@@ -29,9 +30,10 @@
 		5D42DA0F270BE00D0055D1E4 /* InteractiveGridViewControllerRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractiveGridViewControllerRepresentable.swift; sourceTree = "<group>"; };
 		5D42DA10270BE00D0055D1E4 /* InteractiveGridViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractiveGridViewController.swift; sourceTree = "<group>"; };
 		5D42DA11270BE00D0055D1E4 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		5D42DA12270BE00D0055D1E4 /* GridCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridCell.swift; sourceTree = "<group>"; };
+		5D42DA12270BE00D0055D1E4 /* GridCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridCollectionViewCell.swift; sourceTree = "<group>"; };
 		5D42DA1B270BE0440055D1E4 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5D42DA1D270BE0560055D1E4 /* InteractiveGridApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractiveGridApp.swift; sourceTree = "<group>"; };
+		5D921DDD2853FF59007C0EE4 /* GridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCell.swift; sourceTree = "<group>"; };
 		5DDC6445270DDFDD0059AA6D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,7 +74,8 @@
 				5D42DA0F270BE00D0055D1E4 /* InteractiveGridViewControllerRepresentable.swift */,
 				5D42DA0E270BE00D0055D1E4 /* DynamicLayoutGroupProvider.swift */,
 				5D42DA0D270BE00C0055D1E4 /* DefaultDynamicLayoutGroupProvider.swift */,
-				5D42DA12270BE00D0055D1E4 /* GridCell.swift */,
+				5D42DA12270BE00D0055D1E4 /* GridCollectionViewCell.swift */,
+				5D921DDD2853FF59007C0EE4 /* GridCell.swift */,
 				5D42DA11270BE00D0055D1E4 /* Model.swift */,
 				5D42D9F3270BDF350055D1E4 /* Assets.xcassets */,
 				5D42D9F5270BDF350055D1E4 /* Preview Content */,
@@ -167,7 +170,8 @@
 				5D42DA16270BE00D0055D1E4 /* InteractiveGridViewController.swift in Sources */,
 				5D42DA15270BE00D0055D1E4 /* InteractiveGridViewControllerRepresentable.swift in Sources */,
 				5D42DA13270BE00D0055D1E4 /* DefaultDynamicLayoutGroupProvider.swift in Sources */,
-				5D42DA18270BE00D0055D1E4 /* GridCell.swift in Sources */,
+				5D921DDE2853FF59007C0EE4 /* GridCell.swift in Sources */,
+				5D42DA18270BE00D0055D1E4 /* GridCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,7 +311,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -339,7 +343,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
