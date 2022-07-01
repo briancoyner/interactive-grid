@@ -4,12 +4,11 @@ import SwiftUI
 struct InteractiveGridApp: App {
     var body: some Scene {
         WindowGroup {
-            NavigationView {
+            NavigationStack {
                 ContentView()
                     .navigationTitle("Interactive Grid Demo")
                     .navigationBarTitleDisplayMode(.inline)
             }
-            .navigationViewStyle(.stack)
         }
     }
 }

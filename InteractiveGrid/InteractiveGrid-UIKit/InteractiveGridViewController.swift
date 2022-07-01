@@ -454,10 +454,10 @@ extension InteractiveGridViewController {
             cell.contentConfiguration = UIHostingConfiguration {
                 GridCell(model: model)
             }
-            .background(background: {
+            .background {
                 RoundedRectangle(cornerRadius: 16)
                     .fill(Color(uiColor: .systemBackground))
-            })
+            }
 
             // The cell's contentView `CALayer` corner radius is set to the same radius as the background to ensure
             // that the "drag preview" background does not show through.

@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5D07C92A286F20B0009DE34B /* InteractiveGridApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D07C929286F20B0009DE34B /* InteractiveGridApp.swift */; };
+		5D07C92C286F20B0009DE34B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D07C92B286F20B0009DE34B /* ContentView.swift */; };
+		5D07C92E286F20B0009DE34B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D07C92D286F20B0009DE34B /* Assets.xcassets */; };
+		5D07C932286F20B0009DE34B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D07C931286F20B0009DE34B /* Preview Assets.xcassets */; };
+		5D07C937286F2476009DE34B /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D07C936286F2476009DE34B /* Model.swift */; };
+		5D07C93B286F2810009DE34B /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = 5D07C93A286F2810009DE34B /* Collections */; };
 		5D42D9F4270BDF350055D1E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D42D9F3270BDF350055D1E4 /* Assets.xcassets */; };
 		5D42D9F7270BDF350055D1E4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D42D9F6270BDF350055D1E4 /* Preview Assets.xcassets */; };
 		5D42DA13270BE00D0055D1E4 /* DefaultDynamicLayoutGroupProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D42DA0D270BE00C0055D1E4 /* DefaultDynamicLayoutGroupProvider.swift */; };
@@ -17,12 +23,35 @@
 		5D42DA18270BE00D0055D1E4 /* GridCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D42DA12270BE00D0055D1E4 /* GridCollectionViewCell.swift */; };
 		5D42DA1C270BE0440055D1E4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D42DA1B270BE0440055D1E4 /* ContentView.swift */; };
 		5D42DA1E270BE0560055D1E4 /* InteractiveGridApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D42DA1D270BE0560055D1E4 /* InteractiveGridApp.swift */; };
+		5D6FD1E9286F6F6C008F2487 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6FD1E8286F6F6C008F2487 /* main.swift */; };
+		5D6FD1EF286F6FBD008F2487 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = 5D6FD1EE286F6FBD008F2487 /* Collections */; };
+		5D6FD1F2286F7001008F2487 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 5D6FD1F1286F7001008F2487 /* Algorithms */; };
 		5D921DDE2853FF59007C0EE4 /* GridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D921DDD2853FF59007C0EE4 /* GridCell.swift */; };
+		5DAFABDC286F91BA00D72C07 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 5DAFABDB286F91BA00D72C07 /* Algorithms */; };
 		5DDC6446270DDFDD0059AA6D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5DDC6445270DDFDD0059AA6D /* README.md */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		5D6FD1E4286F6F6C008F2487 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		5D42D9EC270BDF340055D1E4 /* InteractiveGrid.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InteractiveGrid.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D07C927286F20B0009DE34B /* InteractiveGrid-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "InteractiveGrid-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D07C929286F20B0009DE34B /* InteractiveGridApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveGridApp.swift; sourceTree = "<group>"; };
+		5D07C92B286F20B0009DE34B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		5D07C92D286F20B0009DE34B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5D07C92F286F20B0009DE34B /* InteractiveGrid_SwiftUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = InteractiveGrid_SwiftUI.entitlements; sourceTree = "<group>"; };
+		5D07C931286F20B0009DE34B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		5D07C936286F2476009DE34B /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		5D42D9EC270BDF340055D1E4 /* InteractiveGrid-UIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "InteractiveGrid-UIKit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D42D9F3270BDF350055D1E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5D42D9F6270BDF350055D1E4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5D42DA0D270BE00C0055D1E4 /* DefaultDynamicLayoutGroupProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultDynamicLayoutGroupProvider.swift; sourceTree = "<group>"; };
@@ -33,39 +62,85 @@
 		5D42DA12270BE00D0055D1E4 /* GridCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridCollectionViewCell.swift; sourceTree = "<group>"; };
 		5D42DA1B270BE0440055D1E4 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5D42DA1D270BE0560055D1E4 /* InteractiveGridApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractiveGridApp.swift; sourceTree = "<group>"; };
+		5D6FD1E6286F6F6C008F2487 /* Playground */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Playground; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D6FD1E8286F6F6C008F2487 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		5D921DDD2853FF59007C0EE4 /* GridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCell.swift; sourceTree = "<group>"; };
 		5DDC6445270DDFDD0059AA6D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5D07C924286F20B0009DE34B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DAFABDC286F91BA00D72C07 /* Algorithms in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5D42D9E9270BDF340055D1E4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D07C93B286F2810009DE34B /* Collections in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5D6FD1E3286F6F6C008F2487 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D6FD1F2286F7001008F2487 /* Algorithms in Frameworks */,
+				5D6FD1EF286F6FBD008F2487 /* Collections in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5D07C928286F20B0009DE34B /* InteractiveGrid-SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				5D07C929286F20B0009DE34B /* InteractiveGridApp.swift */,
+				5D07C92B286F20B0009DE34B /* ContentView.swift */,
+				5D07C936286F2476009DE34B /* Model.swift */,
+				5D07C92D286F20B0009DE34B /* Assets.xcassets */,
+				5D07C92F286F20B0009DE34B /* InteractiveGrid_SwiftUI.entitlements */,
+				5D07C930286F20B0009DE34B /* Preview Content */,
+			);
+			path = "InteractiveGrid-SwiftUI";
+			sourceTree = "<group>";
+		};
+		5D07C930286F20B0009DE34B /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				5D07C931286F20B0009DE34B /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 		5D42D9E3270BDF340055D1E4 = {
 			isa = PBXGroup;
 			children = (
 				5DDC6445270DDFDD0059AA6D /* README.md */,
-				5D42D9EE270BDF340055D1E4 /* InteractiveGrid */,
+				5D42D9EE270BDF340055D1E4 /* InteractiveGrid-UIKit */,
+				5D07C928286F20B0009DE34B /* InteractiveGrid-SwiftUI */,
+				5D6FD1E7286F6F6C008F2487 /* Playground */,
 				5D42D9ED270BDF340055D1E4 /* Products */,
+				5D6FD1ED286F6FBD008F2487 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		5D42D9ED270BDF340055D1E4 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				5D42D9EC270BDF340055D1E4 /* InteractiveGrid.app */,
+				5D42D9EC270BDF340055D1E4 /* InteractiveGrid-UIKit.app */,
+				5D07C927286F20B0009DE34B /* InteractiveGrid-SwiftUI.app */,
+				5D6FD1E6286F6F6C008F2487 /* Playground */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5D42D9EE270BDF340055D1E4 /* InteractiveGrid */ = {
+		5D42D9EE270BDF340055D1E4 /* InteractiveGrid-UIKit */ = {
 			isa = PBXGroup;
 			children = (
 				5D42DA1D270BE0560055D1E4 /* InteractiveGridApp.swift */,
@@ -80,7 +155,7 @@
 				5D42D9F3270BDF350055D1E4 /* Assets.xcassets */,
 				5D42D9F5270BDF350055D1E4 /* Preview Content */,
 			);
-			path = InteractiveGrid;
+			path = "InteractiveGrid-UIKit";
 			sourceTree = "<group>";
 		};
 		5D42D9F5270BDF350055D1E4 /* Preview Content */ = {
@@ -91,12 +166,47 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		5D6FD1E7286F6F6C008F2487 /* Playground */ = {
+			isa = PBXGroup;
+			children = (
+				5D6FD1E8286F6F6C008F2487 /* main.swift */,
+			);
+			path = Playground;
+			sourceTree = "<group>";
+		};
+		5D6FD1ED286F6FBD008F2487 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		5D42D9EB270BDF340055D1E4 /* InteractiveGrid */ = {
+		5D07C926286F20B0009DE34B /* InteractiveGrid-SwiftUI */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5D42D9FA270BDF350055D1E4 /* Build configuration list for PBXNativeTarget "InteractiveGrid" */;
+			buildConfigurationList = 5D07C933286F20B0009DE34B /* Build configuration list for PBXNativeTarget "InteractiveGrid-SwiftUI" */;
+			buildPhases = (
+				5D07C923286F20B0009DE34B /* Sources */,
+				5D07C924286F20B0009DE34B /* Frameworks */,
+				5D07C925286F20B0009DE34B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "InteractiveGrid-SwiftUI";
+			packageProductDependencies = (
+				5DAFABDB286F91BA00D72C07 /* Algorithms */,
+			);
+			productName = "InteractiveGrid-SwiftUI";
+			productReference = 5D07C927286F20B0009DE34B /* InteractiveGrid-SwiftUI.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5D42D9EB270BDF340055D1E4 /* InteractiveGrid-UIKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5D42D9FA270BDF350055D1E4 /* Build configuration list for PBXNativeTarget "InteractiveGrid-UIKit" */;
 			buildPhases = (
 				5D42D9E8270BDF340055D1E4 /* Sources */,
 				5D42D9E9270BDF340055D1E4 /* Frameworks */,
@@ -106,10 +216,34 @@
 			);
 			dependencies = (
 			);
-			name = InteractiveGrid;
+			name = "InteractiveGrid-UIKit";
+			packageProductDependencies = (
+				5D07C93A286F2810009DE34B /* Collections */,
+			);
 			productName = InteractiveGrid;
-			productReference = 5D42D9EC270BDF340055D1E4 /* InteractiveGrid.app */;
+			productReference = 5D42D9EC270BDF340055D1E4 /* InteractiveGrid-UIKit.app */;
 			productType = "com.apple.product-type.application";
+		};
+		5D6FD1E5286F6F6C008F2487 /* Playground */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5D6FD1EC286F6F6C008F2487 /* Build configuration list for PBXNativeTarget "Playground" */;
+			buildPhases = (
+				5D6FD1E2286F6F6C008F2487 /* Sources */,
+				5D6FD1E3286F6F6C008F2487 /* Frameworks */,
+				5D6FD1E4286F6F6C008F2487 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Playground;
+			packageProductDependencies = (
+				5D6FD1EE286F6FBD008F2487 /* Collections */,
+				5D6FD1F1286F7001008F2487 /* Algorithms */,
+			);
+			productName = Playground;
+			productReference = 5D6FD1E6286F6F6C008F2487 /* Playground */;
+			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
@@ -118,12 +252,18 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1300;
-				LastUpgradeCheck = 1300;
+				LastSwiftUpdateCheck = 1400;
+				LastUpgradeCheck = 1400;
 				TargetAttributes = {
+					5D07C926286F20B0009DE34B = {
+						CreatedOnToolsVersion = 14.0;
+					};
 					5D42D9EB270BDF340055D1E4 = {
 						CreatedOnToolsVersion = 13.0;
 						LastSwiftMigration = 1300;
+					};
+					5D6FD1E5286F6F6C008F2487 = {
+						CreatedOnToolsVersion = 14.0;
 					};
 				};
 			};
@@ -136,16 +276,31 @@
 				Base,
 			);
 			mainGroup = 5D42D9E3270BDF340055D1E4;
+			packageReferences = (
+				5D07C939286F2810009DE34B /* XCRemoteSwiftPackageReference "swift-collections" */,
+				5D6FD1F0286F7001008F2487 /* XCRemoteSwiftPackageReference "swift-algorithms" */,
+			);
 			productRefGroup = 5D42D9ED270BDF340055D1E4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				5D42D9EB270BDF340055D1E4 /* InteractiveGrid */,
+				5D42D9EB270BDF340055D1E4 /* InteractiveGrid-UIKit */,
+				5D07C926286F20B0009DE34B /* InteractiveGrid-SwiftUI */,
+				5D6FD1E5286F6F6C008F2487 /* Playground */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		5D07C925286F20B0009DE34B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D07C932286F20B0009DE34B /* Preview Assets.xcassets in Resources */,
+				5D07C92E286F20B0009DE34B /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5D42D9EA270BDF340055D1E4 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -159,6 +314,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5D07C923286F20B0009DE34B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D07C937286F2476009DE34B /* Model.swift in Sources */,
+				5D07C92C286F20B0009DE34B /* ContentView.swift in Sources */,
+				5D07C92A286F20B0009DE34B /* InteractiveGridApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5D42D9E8270BDF340055D1E4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -175,9 +340,89 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		5D6FD1E2286F6F6C008F2487 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D6FD1E9286F6F6C008F2487 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		5D07C934286F20B0009DE34B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "InteractiveGrid-SwiftUI/InteractiveGrid_SwiftUI.entitlements";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"InteractiveGrid-SwiftUI/Preview Content\"";
+				DEVELOPMENT_TEAM = KC5B683642;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.highrailcompany.InteractiveGrid-SwiftUI";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5D07C935286F20B0009DE34B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "InteractiveGrid-SwiftUI/InteractiveGrid_SwiftUI.entitlements";
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"InteractiveGrid-SwiftUI/Preview Content\"";
+				DEVELOPMENT_TEAM = KC5B683642;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.highrailcompany.InteractiveGrid-SwiftUI";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		5D42D9F8270BDF350055D1E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -302,7 +547,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"InteractiveGrid/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"InteractiveGrid-UIKit/Preview Content\"";
 				DEVELOPMENT_TEAM = KC5B683642;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -334,7 +579,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"InteractiveGrid/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"InteractiveGrid-UIKit/Preview Content\"";
 				DEVELOPMENT_TEAM = KC5B683642;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -357,9 +602,48 @@
 			};
 			name = Release;
 		};
+		5D6FD1EA286F6F6C008F2487 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = KC5B683642;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.4;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		5D6FD1EB286F6F6C008F2487 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = KC5B683642;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.4;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		5D07C933286F20B0009DE34B /* Build configuration list for PBXNativeTarget "InteractiveGrid-SwiftUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D07C934286F20B0009DE34B /* Debug */,
+				5D07C935286F20B0009DE34B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		5D42D9E7270BDF340055D1E4 /* Build configuration list for PBXProject "InteractiveGrid" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -369,7 +653,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5D42D9FA270BDF350055D1E4 /* Build configuration list for PBXNativeTarget "InteractiveGrid" */ = {
+		5D42D9FA270BDF350055D1E4 /* Build configuration list for PBXNativeTarget "InteractiveGrid-UIKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5D42D9FB270BDF350055D1E4 /* Debug */,
@@ -378,7 +662,58 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		5D6FD1EC286F6F6C008F2487 /* Build configuration list for PBXNativeTarget "Playground" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5D6FD1EA286F6F6C008F2487 /* Debug */,
+				5D6FD1EB286F6F6C008F2487 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		5D07C939286F2810009DE34B /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+		5D6FD1F0286F7001008F2487 /* XCRemoteSwiftPackageReference "swift-algorithms" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-algorithms.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5D07C93A286F2810009DE34B /* Collections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5D07C939286F2810009DE34B /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = Collections;
+		};
+		5D6FD1EE286F6FBD008F2487 /* Collections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5D07C939286F2810009DE34B /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = Collections;
+		};
+		5D6FD1F1286F7001008F2487 /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5D6FD1F0286F7001008F2487 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
+		};
+		5DAFABDB286F91BA00D72C07 /* Algorithms */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5D6FD1F0286F7001008F2487 /* XCRemoteSwiftPackageReference "swift-algorithms" */;
+			productName = Algorithms;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5D42D9E4270BDF340055D1E4 /* Project object */;
 }

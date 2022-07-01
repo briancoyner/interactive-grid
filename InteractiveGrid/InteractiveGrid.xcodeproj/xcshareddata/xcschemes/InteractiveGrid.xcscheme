@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1300"
+   LastUpgradeVersion = "1400"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5D42D9EB270BDF340055D1E4"
-               BuildableName = "InteractiveGrid.app"
-               BlueprintName = "InteractiveGrid"
+               BuildableName = "InteractiveGrid-UIKit.app"
+               BlueprintName = "InteractiveGrid-UIKit"
                ReferencedContainer = "container:InteractiveGrid.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -55,8 +55,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5D42D9EB270BDF340055D1E4"
-            BuildableName = "InteractiveGrid.app"
-            BlueprintName = "InteractiveGrid"
+            BuildableName = "InteractiveGrid-UIKit.app"
+            BlueprintName = "InteractiveGrid-UIKit"
             ReferencedContainer = "container:InteractiveGrid.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -72,8 +72,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5D42D9EB270BDF340055D1E4"
-            BuildableName = "InteractiveGrid.app"
-            BlueprintName = "InteractiveGrid"
+            BuildableName = "InteractiveGrid-UIKit.app"
+            BlueprintName = "InteractiveGrid-UIKit"
             ReferencedContainer = "container:InteractiveGrid.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
