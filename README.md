@@ -1,4 +1,4 @@
-# Building An Interactive Grid View
+# Building An Interactive Grid View With UIKit
 
 ![Goals](goals.gif)
 
