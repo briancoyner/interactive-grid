@@ -3,10 +3,16 @@ import UIKit
 
 final class DefaultDynamicLayoutGroupProvider: DynamicLayoutGroupProvider {
 
+    private lazy var compactGroupSize = lazyCompactGroupSize()
+    private lazy var compactOrphanGroupSize = lazyCompactOrphanGroupSize()
+    private lazy var regularGroupSize = lazyRegularGroupSize()
+
+    private lazy var compactWidthLayoutItem = lazyCompactWidthLayoutItem()
+    private lazy var fullWidthLayoutItem = lazyFullWidthLayoutItem()
+
     private lazy var compactGroup = lazyCompactGroup()
     private lazy var compactOrphanGroup = lazyCompactOrphanGroup()
     private lazy var regularGroup = lazyRegularGroup()
-    private lazy var fullWidthItem = lazyFullWidthItem()
 }
 
 extension DefaultDynamicLayoutGroupProvider {
@@ -64,24 +70,10 @@ extension DefaultDynamicLayoutGroupProvider {
 
 extension DefaultDynamicLayoutGroupProvider {
 
-    private func lazyFullWidthItem() -> NSCollectionLayoutItem {
-        let layoutSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .fractionalHeight(1.0)
-        )
-
-        return NSCollectionLayoutItem(layoutSize: layoutSize)
-    }
-
     private func lazyCompactGroup() -> NSCollectionLayoutGroup {
-        let compactGroupSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .fractionalWidth(0.5)
-        )
-        
         let compactGroup = NSCollectionLayoutGroup.horizontal(
             layoutSize: compactGroupSize,
-            subitem: fullWidthItem,
+            repeatingSubitem: compactWidthLayoutItem,
             count: 2
         )
         compactGroup.interItemSpacing = .fixed(16)
@@ -90,28 +82,63 @@ extension DefaultDynamicLayoutGroupProvider {
     }
 
     private func lazyCompactOrphanGroup() -> NSCollectionLayoutGroup {
-        let compactOrphanGroupSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(0.5),
-            heightDimension: .fractionalWidth(0.5)
-        )
-
         return NSCollectionLayoutGroup.horizontal(
             layoutSize: compactOrphanGroupSize,
-            subitem: fullWidthItem,
+            repeatingSubitem: fullWidthLayoutItem,
             count: 1
         )
     }
 
     private func lazyRegularGroup() -> NSCollectionLayoutGroup {
-        let regularGroupSize = NSCollectionLayoutSize(
+        return NSCollectionLayoutGroup.horizontal(
+            layoutSize: regularGroupSize,
+            repeatingSubitem: fullWidthLayoutItem,
+            count: 1
+        )
+    }
+}
+
+extension DefaultDynamicLayoutGroupProvider {
+
+    private func lazyCompactWidthLayoutItem() -> NSCollectionLayoutItem {
+        let layoutSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(0.5),
+            heightDimension: .fractionalHeight(1.0)
+        )
+
+        return NSCollectionLayoutItem(layoutSize: layoutSize)
+    }
+
+    private func lazyFullWidthLayoutItem() -> NSCollectionLayoutItem {
+        let layoutSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .fractionalHeight(1.0)
+        )
+
+        return NSCollectionLayoutItem(layoutSize: layoutSize)
+    }
+}
+
+extension DefaultDynamicLayoutGroupProvider {
+
+    private func lazyCompactGroupSize() -> NSCollectionLayoutSize {
+        return NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .fractionalWidth(0.5)
         )
+    }
 
-        return NSCollectionLayoutGroup.horizontal(
-            layoutSize: regularGroupSize,
-            subitem: fullWidthItem,
-            count: 1
+    private func lazyCompactOrphanGroupSize() -> NSCollectionLayoutSize {
+        return NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(0.5),
+            heightDimension: .fractionalWidth(0.5)
+        )
+    }
+
+    private func lazyRegularGroupSize() -> NSCollectionLayoutSize {
+        return NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .fractionalWidth(0.5)
         )
     }
 }
