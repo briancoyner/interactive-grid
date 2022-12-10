@@ -449,8 +449,8 @@ extension InteractiveGridViewController {
         }
     }
 
-    private func makeCellRegistration() -> UICollectionView.CellRegistration<UICollectionViewCell, Model> {
-        return UICollectionView.CellRegistration<UICollectionViewCell, Model> { (cell, indexPath, model) in
+    private func makeCellRegistration() -> UICollectionView.CellRegistration<GridCollectionViewCell, Model> {
+        return UICollectionView.CellRegistration<GridCollectionViewCell, Model> { (cell, indexPath, model) in
             cell.contentConfiguration = UIHostingConfiguration {
                 GridCell(model: model)
             }
