@@ -1,6 +1,7 @@
 import Foundation
 import UIKit
 import SwiftUI
+import Algorithms
 
 /// This view controller presents a `UICollectionView` driven by an array of `Model`s, where each
 /// `Model` provides an `Int` value and a `Model.Style` (compact or regular).
@@ -102,8 +103,13 @@ extension InteractiveGridViewController: UICollectionViewDragDelegate {
         toProposedIndexPath proposedIndexPath: IndexPath
     ) -> IndexPath {
 
+        let draggedItem = dataSource.itemIdentifier(for: originalIndexPath)
         let currentItem = dataSource.itemIdentifier(for: currentIndexPath)
         let proposedItem = dataSource.itemIdentifier(for: proposedIndexPath)
+
+        print("##### \(draggedItem!); \(currentItem!); \(proposedItem!)")
+        print("##### \(originalIndexPath.item); \(currentIndexPath.item); \(proposedIndexPath.item)")
+        print("##### \(dataSource.snapshot().itemIdentifiers)")
 
         // Point of confusion:
         //
@@ -114,25 +120,15 @@ extension InteractiveGridViewController: UICollectionViewDragDelegate {
             return proposedIndexPath
         }
 
-        // Next is where we build an array of `Model`s that represent the current drag state.
-        // The `proposedDragItems` allows us to dynamically layout the cells based on a derived
-        // compositional layout.
+        let (proposedDragItems, dropIndex) = type(of: layoutGroupProvider).deriveProposedDragStateChange(
+            forDraggingIndex: originalIndexPath.item,
+            atCurrentIndex: currentIndexPath.item,
+            toProposedDropIndex: proposedIndexPath.item,
+            models: dataSource.snapshot().itemIdentifiers
+        )
 
-        let from = originalIndexPath.item
-        let to = proposedIndexPath.item
-
-        let fromOffsets = IndexSet(integer: from)
-        let toOffset = to > from ? to + 1 : to
-
-        // We now take a snapshot and adjust the items as needed.
-        // The mutated snapshot is _not_ applied to the data source. Instead
-        // the snapshot is stored in the `proposedDragItems`. The `proposedDragItems`
-        // is used to drive dynamic changes to the compositional layout during a drag/ reorder.
-        var proposedDragItems = dataSource.snapshot().itemIdentifiers
-        proposedDragItems.move(fromOffsets: fromOffsets, toOffset: toOffset)
         self.proposedDragItems = proposedDragItems
-
-        return proposedIndexPath
+        return IndexPath(item: dropIndex, section: 0)
     }
 
     func collectionView(

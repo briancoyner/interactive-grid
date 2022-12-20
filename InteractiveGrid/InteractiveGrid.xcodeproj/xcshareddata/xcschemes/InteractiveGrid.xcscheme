@@ -38,6 +38,17 @@
                ReferencedContainer = "container:InteractiveGrid.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "5D34175E294FB24F00654BA6"
+               BuildableName = "InteractiveGrid-UIKitTests.xctest"
+               BlueprintName = "InteractiveGrid-UIKitTests"
+               ReferencedContainer = "container:InteractiveGrid.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

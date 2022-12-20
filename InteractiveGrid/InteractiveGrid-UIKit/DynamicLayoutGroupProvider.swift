@@ -9,4 +9,13 @@ protocol DynamicLayoutGroupProvider {
         currentStyle: Model.Style,
         nextStyle: Model.Style?
     ) -> NSCollectionLayoutGroup?
+
+    // TODO: This API is a bit wonky on this protocol. But... this method implementation is directly linked with the
+    // generated layout. 
+    static func deriveProposedDragStateChange(
+        forDraggingIndex draggingIndex: Int,
+        atCurrentIndex currentIndex: Int,
+        toProposedDropIndex proposedDropIndex: Int,
+        models: [Model]
+    ) -> ([Model], Int)
 }

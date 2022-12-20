@@ -1,6 +1,6 @@
 import Foundation
 
-struct Model: Hashable {
+struct Model: Hashable, CustomDebugStringConvertible {
     enum Style {
         case compact
         case regular
@@ -9,6 +9,10 @@ struct Model: Hashable {
     let value: Int
     let style: Style
     let allowsContextMenu: Bool
+
+    var debugDescription: String {
+        return "(\(value), \(style))"
+    }
 }
 
 extension Model.Style: CustomStringConvertible {
