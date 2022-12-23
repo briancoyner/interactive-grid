@@ -103,6 +103,7 @@ extension DefaultDynamicLayoutGroupProvider_DragStateChangeTest {
                 Model(value: 2, style: .compact, allowsContextMenu: true),
                 Model(value: 3, style: .regular, allowsContextMenu: true),
                 Model(value: 4, style: .compact, allowsContextMenu: true)
+
             ],
             expectedDragStateChange: (dropIndex: 1, proposedLayoutModels: [
                 Model(value: 0, style: .regular, allowsContextMenu: true),
