@@ -10,6 +10,12 @@ struct Model: Hashable, CustomDebugStringConvertible {
     let style: Style
     let allowsContextMenu: Bool
 
+    init(value: Int, style: Style, allowsContextMenu: Bool = true) {
+        self.value = value
+        self.style = style
+        self.allowsContextMenu = allowsContextMenu
+    }
+
     var debugDescription: String {
         return "(\(value), \(style))"
     }

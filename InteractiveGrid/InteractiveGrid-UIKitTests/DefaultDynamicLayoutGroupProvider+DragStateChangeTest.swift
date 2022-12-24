@@ -15,12 +15,12 @@ extension DefaultDynamicLayoutGroupProvider_DragStateChangeTest {
             atCurrentIndex: 0,
             toProposedDropIndex: 1,
             associatedWith: [
-                Model(value: 0, style: .regular, allowsContextMenu: true),
-                Model(value: 1, style: .compact, allowsContextMenu: true)
+                Model(value: 0, style: .regular),
+                Model(value: 1, style: .compact)
             ],
             expectedDragStateChange: (dropIndex: 1, proposedLayoutModels: [
-                Model(value: 1, style: .compact, allowsContextMenu: true),
-                Model(value: 0, style: .regular, allowsContextMenu: true)
+                Model(value: 1, style: .compact),
+                Model(value: 0, style: .regular)
             ])
         )
     }
@@ -31,14 +31,14 @@ extension DefaultDynamicLayoutGroupProvider_DragStateChangeTest {
             atCurrentIndex: 0,
             toProposedDropIndex: 1,
             associatedWith: [
-                Model(value: 0, style: .regular, allowsContextMenu: true),
-                Model(value: 1, style: .compact, allowsContextMenu: true),
-                Model(value: 2, style: .compact, allowsContextMenu: true)
+                Model(value: 0, style: .regular),
+                Model(value: 1, style: .compact),
+                Model(value: 2, style: .compact)
             ],
             expectedDragStateChange: (dropIndex: 2, proposedLayoutModels: [
-                Model(value: 1, style: .compact, allowsContextMenu: true),
-                Model(value: 2, style: .compact, allowsContextMenu: true),
-                Model(value: 0, style: .regular, allowsContextMenu: true)
+                Model(value: 1, style: .compact),
+                Model(value: 2, style: .compact),
+                Model(value: 0, style: .regular)
             ])
         )
     }
@@ -54,18 +54,18 @@ extension DefaultDynamicLayoutGroupProvider_DragStateChangeTest {
             atCurrentIndex: 2,
             toProposedDropIndex: 0,
             associatedWith: [
-                Model(value: 0, style: .compact, allowsContextMenu: true),
-                Model(value: 1, style: .compact, allowsContextMenu: true),
-                Model(value: 2, style: .regular, allowsContextMenu: true),
-                Model(value: 3, style: .compact, allowsContextMenu: true),
-                Model(value: 4, style: .compact, allowsContextMenu: true)
+                Model(value: 0, style: .compact),
+                Model(value: 1, style: .compact),
+                Model(value: 2, style: .regular),
+                Model(value: 3, style: .compact),
+                Model(value: 4, style: .compact)
             ],
             expectedDragStateChange: (dropIndex: 0, proposedLayoutModels: [
-                Model(value: 2, style: .regular, allowsContextMenu: true),
-                Model(value: 0, style: .compact, allowsContextMenu: true),
-                Model(value: 1, style: .compact, allowsContextMenu: true),
-                Model(value: 3, style: .compact, allowsContextMenu: true),
-                Model(value: 4, style: .compact, allowsContextMenu: true)
+                Model(value: 2, style: .regular),
+                Model(value: 0, style: .compact),
+                Model(value: 1, style: .compact),
+                Model(value: 3, style: .compact),
+                Model(value: 4, style: .compact)
             ])
         )
     }
@@ -76,18 +76,18 @@ extension DefaultDynamicLayoutGroupProvider_DragStateChangeTest {
             atCurrentIndex: 2,
             toProposedDropIndex: 1,
             associatedWith: [
-                Model(value: 0, style: .compact, allowsContextMenu: true),
-                Model(value: 1, style: .compact, allowsContextMenu: true),
-                Model(value: 2, style: .regular, allowsContextMenu: true),
-                Model(value: 3, style: .compact, allowsContextMenu: true),
-                Model(value: 4, style: .compact, allowsContextMenu: true)
+                Model(value: 0, style: .compact),
+                Model(value: 1, style: .compact),
+                Model(value: 2, style: .regular),
+                Model(value: 3, style: .compact),
+                Model(value: 4, style: .compact)
             ],
             expectedDragStateChange: (dropIndex: 0, proposedLayoutModels: [
-                Model(value: 2, style: .regular, allowsContextMenu: true),
-                Model(value: 0, style: .compact, allowsContextMenu: true),
-                Model(value: 1, style: .compact, allowsContextMenu: true),
-                Model(value: 3, style: .compact, allowsContextMenu: true),
-                Model(value: 4, style: .compact, allowsContextMenu: true)
+                Model(value: 2, style: .regular),
+                Model(value: 0, style: .compact),
+                Model(value: 1, style: .compact),
+                Model(value: 3, style: .compact),
+                Model(value: 4, style: .compact)
             ])
         )
     }
@@ -98,19 +98,19 @@ extension DefaultDynamicLayoutGroupProvider_DragStateChangeTest {
             atCurrentIndex: 3,
             toProposedDropIndex: 1,
             associatedWith: [
-                Model(value: 0, style: .regular, allowsContextMenu: true),
-                Model(value: 1, style: .compact, allowsContextMenu: true),
-                Model(value: 2, style: .compact, allowsContextMenu: true),
-                Model(value: 3, style: .regular, allowsContextMenu: true),
-                Model(value: 4, style: .compact, allowsContextMenu: true)
+                Model(value: 0, style: .regular),
+                Model(value: 1, style: .compact),
+                Model(value: 2, style: .compact),
+                Model(value: 3, style: .regular),
+                Model(value: 4, style: .compact)
 
             ],
             expectedDragStateChange: (dropIndex: 1, proposedLayoutModels: [
-                Model(value: 0, style: .regular, allowsContextMenu: true),
-                Model(value: 3, style: .regular, allowsContextMenu: true),
-                Model(value: 1, style: .compact, allowsContextMenu: true),
-                Model(value: 2, style: .compact, allowsContextMenu: true),
-                Model(value: 4, style: .compact, allowsContextMenu: true)
+                Model(value: 0, style: .regular),
+                Model(value: 3, style: .regular),
+                Model(value: 1, style: .compact),
+                Model(value: 2, style: .compact),
+                Model(value: 4, style: .compact)
             ])
         )
     }
@@ -121,18 +121,18 @@ extension DefaultDynamicLayoutGroupProvider_DragStateChangeTest {
             atCurrentIndex: 0,
             toProposedDropIndex: 1,
             associatedWith: [
-                Model(value: 1, style: .regular, allowsContextMenu: true),
-                Model(value: 2, style: .compact, allowsContextMenu: true),
-                Model(value: 3, style: .compact, allowsContextMenu: true),
-                Model(value: 4, style: .compact, allowsContextMenu: true),
-                Model(value: 5, style: .compact, allowsContextMenu: true)
+                Model(value: 1, style: .regular),
+                Model(value: 2, style: .compact),
+                Model(value: 3, style: .compact),
+                Model(value: 4, style: .compact),
+                Model(value: 5, style: .compact)
             ],
             expectedDragStateChange: (dropIndex: 2, proposedLayoutModels: [
-                Model(value: 2, style: .compact, allowsContextMenu: true),
-                Model(value: 3, style: .compact, allowsContextMenu: true),
-                Model(value: 1, style: .regular, allowsContextMenu: true),
-                Model(value: 4, style: .compact, allowsContextMenu: true),
-                Model(value: 5, style: .compact, allowsContextMenu: true)
+                Model(value: 2, style: .compact),
+                Model(value: 3, style: .compact),
+                Model(value: 1, style: .regular),
+                Model(value: 4, style: .compact),
+                Model(value: 5, style: .compact)
             ])
         )
     }
@@ -143,18 +143,18 @@ extension DefaultDynamicLayoutGroupProvider_DragStateChangeTest {
             atCurrentIndex: 0,
             toProposedDropIndex: 1,
             associatedWith: [
-                Model(value: 1, style: .regular, allowsContextMenu: true),
-                Model(value: 2, style: .compact, allowsContextMenu: true),
-                Model(value: 3, style: .regular, allowsContextMenu: true),
-                Model(value: 4, style: .compact, allowsContextMenu: true),
-                Model(value: 5, style: .compact, allowsContextMenu: true)
+                Model(value: 1, style: .regular),
+                Model(value: 2, style: .compact),
+                Model(value: 3, style: .regular),
+                Model(value: 4, style: .compact),
+                Model(value: 5, style: .compact)
             ],
             expectedDragStateChange: (dropIndex: 1, proposedLayoutModels: [
-                Model(value: 2, style: .compact, allowsContextMenu: true),
-                Model(value: 1, style: .regular, allowsContextMenu: true),
-                Model(value: 3, style: .regular, allowsContextMenu: true),
-                Model(value: 4, style: .compact, allowsContextMenu: true),
-                Model(value: 5, style: .compact, allowsContextMenu: true)
+                Model(value: 2, style: .compact),
+                Model(value: 1, style: .regular),
+                Model(value: 3, style: .regular),
+                Model(value: 4, style: .compact),
+                Model(value: 5, style: .compact)
             ])
         )
     }
@@ -165,18 +165,18 @@ extension DefaultDynamicLayoutGroupProvider_DragStateChangeTest {
             atCurrentIndex: 0,
             toProposedDropIndex: 1,
             associatedWith: [
-                Model(value: 1, style: .regular, allowsContextMenu: true),
-                Model(value: 2, style: .compact, allowsContextMenu: true),
-                Model(value: 3, style: .regular, allowsContextMenu: true),
-                Model(value: 4, style: .compact, allowsContextMenu: true),
-                Model(value: 5, style: .compact, allowsContextMenu: true)
+                Model(value: 1, style: .regular),
+                Model(value: 2, style: .compact),
+                Model(value: 3, style: .regular),
+                Model(value: 4, style: .compact),
+                Model(value: 5, style: .compact)
             ],
             expectedDragStateChange: (dropIndex: 1, proposedLayoutModels: [
-                Model(value: 2, style: .compact, allowsContextMenu: true),
-                Model(value: 1, style: .regular, allowsContextMenu: true),
-                Model(value: 3, style: .regular, allowsContextMenu: true),
-                Model(value: 4, style: .compact, allowsContextMenu: true),
-                Model(value: 5, style: .compact, allowsContextMenu: true)
+                Model(value: 2, style: .compact),
+                Model(value: 1, style: .regular),
+                Model(value: 3, style: .regular),
+                Model(value: 4, style: .compact),
+                Model(value: 5, style: .compact)
             ])
         )
     }
@@ -187,16 +187,16 @@ extension DefaultDynamicLayoutGroupProvider_DragStateChangeTest {
             atCurrentIndex: 3,
             toProposedDropIndex: 2,
             associatedWith: [
-                Model(value: 0, style: .compact, allowsContextMenu: true),
-                Model(value: 1, style: .compact, allowsContextMenu: true),
-                Model(value: 2, style: .compact, allowsContextMenu: true),
-                Model(value: 3, style: .regular, allowsContextMenu: true)
+                Model(value: 0, style: .compact),
+                Model(value: 1, style: .compact),
+                Model(value: 2, style: .compact),
+                Model(value: 3, style: .regular)
             ],
             expectedDragStateChange: (dropIndex: 2, proposedLayoutModels: [
-                Model(value: 0, style: .compact, allowsContextMenu: true),
-                Model(value: 1, style: .compact, allowsContextMenu: true),
-                Model(value: 3, style: .regular, allowsContextMenu: true),
-                Model(value: 2, style: .compact, allowsContextMenu: true)
+                Model(value: 0, style: .compact),
+                Model(value: 1, style: .compact),
+                Model(value: 3, style: .regular),
+                Model(value: 2, style: .compact)
             ])
         )
     }
@@ -207,14 +207,14 @@ extension DefaultDynamicLayoutGroupProvider_DragStateChangeTest {
             atCurrentIndex: 1,
             toProposedDropIndex: 0,
             associatedWith: [
-                Model(value: 0, style: .regular, allowsContextMenu: true),
-                Model(value: 1, style: .compact, allowsContextMenu: true),
-                Model(value: 2, style: .compact, allowsContextMenu: true)
+                Model(value: 0, style: .regular),
+                Model(value: 1, style: .compact),
+                Model(value: 2, style: .compact)
             ],
             expectedDragStateChange: (dropIndex: 0, proposedLayoutModels: [
-                Model(value: 1, style: .compact, allowsContextMenu: true),
-                Model(value: 0, style: .regular, allowsContextMenu: true),
-                Model(value: 2, style: .compact, allowsContextMenu: true)
+                Model(value: 1, style: .compact),
+                Model(value: 0, style: .regular),
+                Model(value: 2, style: .compact)
             ])
         )
     }
@@ -226,14 +226,14 @@ extension DefaultDynamicLayoutGroupProvider_DragStateChangeTest {
             atCurrentIndex: 2,
             toProposedDropIndex: 1,
             associatedWith: [
-                Model(value: 0, style: .regular, allowsContextMenu: true),
-                Model(value: 1, style: .compact, allowsContextMenu: true),
-                Model(value: 2, style: .compact, allowsContextMenu: true)
+                Model(value: 0, style: .regular),
+                Model(value: 1, style: .compact),
+                Model(value: 2, style: .compact)
             ],
             expectedDragStateChange: (dropIndex: 0, proposedLayoutModels: [
-                Model(value: 0, style: .regular, allowsContextMenu: true),
-                Model(value: 1, style: .compact, allowsContextMenu: true),
-                Model(value: 2, style: .compact, allowsContextMenu: true)
+                Model(value: 0, style: .regular),
+                Model(value: 1, style: .compact),
+                Model(value: 2, style: .compact)
             ])
         )
     }
@@ -244,14 +244,14 @@ extension DefaultDynamicLayoutGroupProvider_DragStateChangeTest {
             atCurrentIndex: 2,
             toProposedDropIndex: 0,
             associatedWith: [
-                Model(value: 0, style: .regular, allowsContextMenu: true),
-                Model(value: 1, style: .compact, allowsContextMenu: true),
-                Model(value: 2, style: .compact, allowsContextMenu: true)
+                Model(value: 0, style: .regular),
+                Model(value: 1, style: .compact),
+                Model(value: 2, style: .compact)
             ],
             expectedDragStateChange: (dropIndex: 0, proposedLayoutModels: [
-                Model(value: 0, style: .regular, allowsContextMenu: true),
-                Model(value: 1, style: .compact, allowsContextMenu: true),
-                Model(value: 2, style: .compact, allowsContextMenu: true)
+                Model(value: 0, style: .regular),
+                Model(value: 1, style: .compact),
+                Model(value: 2, style: .compact)
             ])
         )
     }
@@ -262,12 +262,12 @@ extension DefaultDynamicLayoutGroupProvider_DragStateChangeTest {
             atCurrentIndex: 0,
             toProposedDropIndex: 1,
             associatedWith: [
-                Model(value: 0, style: .regular, allowsContextMenu: true),
-                Model(value: 1, style: .compact, allowsContextMenu: true)
+                Model(value: 0, style: .regular),
+                Model(value: 1, style: .compact)
             ],
             expectedDragStateChange: (dropIndex: 1, proposedLayoutModels: [
-                Model(value: 1, style: .compact, allowsContextMenu: true),
-                Model(value: 0, style: .regular, allowsContextMenu: true)
+                Model(value: 1, style: .compact),
+                Model(value: 0, style: .regular)
             ])
         )
     }
@@ -278,12 +278,100 @@ extension DefaultDynamicLayoutGroupProvider_DragStateChangeTest {
             atCurrentIndex: 1,
             toProposedDropIndex: 0,
             associatedWith: [
-                Model(value: 0, style: .regular, allowsContextMenu: true),
-                Model(value: 1, style: .compact, allowsContextMenu: true)
+                Model(value: 0, style: .regular),
+                Model(value: 1, style: .compact)
             ],
             expectedDragStateChange: (dropIndex: 0, proposedLayoutModels: [
-                Model(value: 1, style: .compact, allowsContextMenu: true),
-                Model(value: 0, style: .regular, allowsContextMenu: true)
+                Model(value: 1, style: .compact),
+                Model(value: 0, style: .regular)
+            ])
+        )
+    }
+
+    func testTODO_ProvideDescriptiveName_15() {
+        doTestDeriveProposedDragStateChange(
+            forDraggingIndex: 2,
+            atCurrentIndex: 2,
+            toProposedDropIndex: 3,
+            associatedWith: [
+                Model(value: 0, style: .compact),
+                Model(value: 1, style: .regular),
+                Model(value: 2, style: .compact),
+                Model(value: 3, style: .regular)
+
+            ],
+            expectedDragStateChange: (dropIndex: 3, proposedLayoutModels: [
+                Model(value: 0, style: .compact),
+                Model(value: 1, style: .regular),
+                Model(value: 3, style: .regular),
+                Model(value: 2, style: .compact)
+            ])
+        )
+    }
+
+    func testTODO_ProvideDescriptiveName_16() {
+        doTestDeriveProposedDragStateChange(
+            forDraggingIndex: 3,
+            atCurrentIndex: 3,
+            toProposedDropIndex: 2,
+            associatedWith: [
+                Model(value: 0, style: .compact),
+                Model(value: 1, style: .regular),
+                Model(value: 2, style: .compact),
+                Model(value: 3, style: .regular)
+
+            ],
+            expectedDragStateChange: (dropIndex: 2, proposedLayoutModels: [
+                Model(value: 0, style: .compact),
+                Model(value: 1, style: .regular),
+                Model(value: 3, style: .regular),
+                Model(value: 2, style: .compact)
+            ])
+        )
+    }
+
+    func testDragCompactLeadingItem_ToLastRowAtIndexContainingARegularItem_DraggedCompactItemMovesAfterTheRegularItem() {
+        doTestDeriveProposedDragStateChange(
+            forDraggingIndex: 1,
+            atCurrentIndex: 1,
+            toProposedDropIndex: 3,
+            associatedWith: [
+                Model(value: 0, style: .regular),
+                Model(value: 1, style: .compact),
+                Model(value: 2, style: .compact),
+                Model(value: 3, style: .regular)
+
+            ],
+            expectedDragStateChange: (dropIndex: 3, proposedLayoutModels: [
+                Model(value: 0, style: .regular),
+                Model(value: 2, style: .compact),
+                Model(value: 3, style: .regular),
+                Model(value: 1, style: .compact)
+            ])
+        )
+    }
+
+    func testDragCompactLeadingItem_ToRowAtIndexContainingARegularItem_DraggedCompactItemMovesAfterTheRegularItem() {
+        doTestDeriveProposedDragStateChange(
+            forDraggingIndex: 1,
+            atCurrentIndex: 1,
+            toProposedDropIndex: 3,
+            associatedWith: [
+                Model(value: 0, style: .regular),
+                Model(value: 1, style: .compact),
+                Model(value: 2, style: .compact),
+                Model(value: 3, style: .regular),
+                Model(value: 4, style: .compact),
+                Model(value: 5, style: .compact)
+
+            ],
+            expectedDragStateChange: (dropIndex: 3, proposedLayoutModels: [
+                Model(value: 0, style: .regular),
+                Model(value: 2, style: .compact),
+                Model(value: 3, style: .regular),
+                Model(value: 1, style: .compact),
+                Model(value: 4, style: .compact),
+                Model(value: 5, style: .compact)
             ])
         )
     }

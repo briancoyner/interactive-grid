@@ -70,12 +70,12 @@ extension Model {
             Model(value: 1, style: .compact, allowsContextMenu: true),
             Model(value: 2, style: .compact, allowsContextMenu: true),
             Model(value: 3, style: .regular, allowsContextMenu: true),
-            Model(value: 4, style: .compact, allowsContextMenu: true),
-            Model(value: 5, style: .compact, allowsContextMenu: true),
-            Model(value: 6, style: .regular, allowsContextMenu: true),
-            Model(value: 7, style: .compact, allowsContextMenu: true),
-            Model(value: 8, style: .compact, allowsContextMenu: true),
-            Model(value: 9, style: .regular, allowsContextMenu: true)
+//            Model(value: 4, style: .compact, allowsContextMenu: true),
+//            Model(value: 5, style: .compact, allowsContextMenu: true),
+//            Model(value: 6, style: .regular, allowsContextMenu: true),
+//            Model(value: 7, style: .compact, allowsContextMenu: true),
+//            Model(value: 8, style: .compact, allowsContextMenu: true),
+//            Model(value: 9, style: .regular, allowsContextMenu: true)
         ]
     }
 

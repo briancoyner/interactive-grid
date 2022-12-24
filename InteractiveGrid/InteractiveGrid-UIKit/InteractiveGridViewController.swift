@@ -128,6 +128,7 @@ extension InteractiveGridViewController: UICollectionViewDragDelegate {
         )
 
         self.proposedDragItems = proposedDragItems
+        print("##### \(dropIndex), \(proposedDragItems)")
         return IndexPath(item: dropIndex, section: 0)
     }
 
@@ -148,6 +149,11 @@ extension InteractiveGridViewController: UICollectionViewDropDelegate {
 
     func collectionView(_: UICollectionView, performDropWith _: UICollectionViewDropCoordinator) {
         // Note: This is a required `UICollectionViewDropDelegate` method.
+    }
+
+    func collectionView(_ collectionView: UICollectionView, dropSessionDidEnd session: UIDropSession) {
+        // Note: This callback executes even if the drop is cancelled.
+        proposedDragItems = nil
     }
 
     func collectionView(
@@ -514,6 +520,12 @@ extension InteractiveGridViewController {
             // Now that the drag is finished, the `proposedDragItems` are cleared.
             // New items are set when the user starts dragging again.
             self?.proposedDragItems = nil
+
+            // TODO: "coding by coincidence": This was hacked in to see if it would help the collection view
+            // correctly handle the situation where a "compact leading" is dragged down to a "regular". The
+            // unit test should what should happen. This seems to force the view to behave correctly, but it's
+            // very hacky (more investigation needed). 
+            self?.collectionView.reloadData()
         }
     }
 }

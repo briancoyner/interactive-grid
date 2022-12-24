@@ -18,8 +18,47 @@ extension DefaultDynamicLayoutGroupProvider {
         let source = models[draggingIndex]
         let target = models[proposedDropIndex]
         switch (source.style, target.style) {
-        case (.compact, _):
+        case (.compact, .compact):
             move(modelAtIndex: draggingIndex, toOffset: newDropIndex, models: &copy)
+        case (.compact, .regular):
+            let dragDirection = DragDirection(currentIndex: currentIndex, proposedDropIndex: newDropIndex)
+            switch dragDirection {
+            case .up:
+                let indexedRowStyles = derivedIndexRowStyles(for: models)
+                let proposedRowStyle = indexedRowStyles[proposedDropIndex]
+                switch proposedRowStyle {
+                case .regular:
+                    newDropIndex = proposedDropIndex
+                    move(modelAtIndex: draggingIndex, toOffset: newDropIndex, models: &copy)
+                case .compactLeading:
+                    newDropIndex = proposedDropIndex
+                    move(modelAtIndex: draggingIndex, toOffset: newDropIndex, models: &copy)
+                case .compactTrailing:
+                    newDropIndex = proposedDropIndex - 1
+                    move(modelAtIndex: draggingIndex, toOffset: newDropIndex, models: &copy)
+                case .compactOrphan:
+                    newDropIndex = proposedDropIndex
+                    pivot(modelBeingDraggedAtIndex: draggingIndex, toIndex: newDropIndex, models: &copy)
+                }
+            case .down:
+                let indexedRowStyles = derivedIndexRowStyles(for: models)
+
+                let proposedRowStyle = indexedRowStyles[proposedDropIndex]
+                switch proposedRowStyle {
+                case .regular:
+                    newDropIndex = proposedDropIndex
+                    pivot(modelBeingDraggedAtIndex: draggingIndex, toIndex: newDropIndex, models: &copy)
+                case .compactLeading:
+                    newDropIndex = proposedDropIndex
+                    move(modelAtIndex: draggingIndex, toOffset: newDropIndex, models: &copy)
+                case .compactTrailing:
+                    newDropIndex = proposedDropIndex - 1
+                    move(modelAtIndex: draggingIndex, toOffset: newDropIndex, models: &copy)
+                case .compactOrphan:
+                    newDropIndex = proposedDropIndex
+                    pivot(modelBeingDraggedAtIndex: draggingIndex, toIndex: newDropIndex, models: &copy)
+                }
+            }
         case (.regular, .regular):
             move(modelAtIndex: draggingIndex, toOffset: newDropIndex, models: &copy)
         case (.regular, .compact):
