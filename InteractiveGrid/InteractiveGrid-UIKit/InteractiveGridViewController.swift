@@ -525,7 +525,7 @@ extension InteractiveGridViewController {
             // correctly handle the situation where a "compact leading" is dragged down to a "regular". The
             // unit test should what should happen. This seems to force the view to behave correctly, but it's
             // very hacky (more investigation needed). 
-            self?.collectionView.reloadData()
+//            self?.collectionView.reloadData()
         }
     }
 }

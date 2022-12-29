@@ -25,13 +25,19 @@
 		5D42DA18270BE00D0055D1E4 /* GridCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D42DA12270BE00D0055D1E4 /* GridCollectionViewCell.swift */; };
 		5D42DA1C270BE0440055D1E4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D42DA1B270BE0440055D1E4 /* ContentView.swift */; };
 		5D42DA1E270BE0560055D1E4 /* InteractiveGridApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D42DA1D270BE0560055D1E4 /* InteractiveGridApp.swift */; };
+		5D5697A2295D378100D9CCB8 /* visualLayout.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5D5697A1295D378100D9CCB8 /* visualLayout.txt */; };
 		5D6FD1E9286F6F6C008F2487 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6FD1E8286F6F6C008F2487 /* main.swift */; };
 		5D6FD1EF286F6FBD008F2487 /* Collections in Frameworks */ = {isa = PBXBuildFile; productRef = 5D6FD1EE286F6FBD008F2487 /* Collections */; };
 		5D6FD1F2286F7001008F2487 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 5D6FD1F1286F7001008F2487 /* Algorithms */; };
+		5D8E4618295F2CDA0026E6FD /* DefaultDynamicLayoutGroupProvider+DragStateChangeVisualLayoutProviderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8E4617295F2CDA0026E6FD /* DefaultDynamicLayoutGroupProvider+DragStateChangeVisualLayoutProviderTest.swift */; };
+		5D8E461A295F2D980026E6FD /* TestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D8E4619295F2D980026E6FD /* TestModel.swift */; };
 		5D921DDE2853FF59007C0EE4 /* GridCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D921DDD2853FF59007C0EE4 /* GridCell.swift */; };
 		5DA31B7F29540658004F5C97 /* DefaultDynamicLayoutGroupProvider+DragStateChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DA31B7E29540658004F5C97 /* DefaultDynamicLayoutGroupProvider+DragStateChange.swift */; };
 		5DAFABDC286F91BA00D72C07 /* Algorithms in Frameworks */ = {isa = PBXBuildFile; productRef = 5DAFABDB286F91BA00D72C07 /* Algorithms */; };
 		5DDC6446270DDFDD0059AA6D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5DDC6445270DDFDD0059AA6D /* README.md */; };
+		5DEA5342295E829A00F41564 /* DragStateChangeTestRunProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEA5341295E829A00F41564 /* DragStateChangeTestRunProvider.swift */; };
+		5DEA5344295E82CE00F41564 /* DragStateChangeTestRunVisualLayoutProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEA5343295E82CE00F41564 /* DragStateChangeTestRunVisualLayoutProvider.swift */; };
+		5DEA5346295E83EA00F41564 /* TestDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DEA5345295E83EA00F41564 /* TestDescription.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,11 +83,17 @@
 		5D42DA12270BE00D0055D1E4 /* GridCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridCollectionViewCell.swift; sourceTree = "<group>"; };
 		5D42DA1B270BE0440055D1E4 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		5D42DA1D270BE0560055D1E4 /* InteractiveGridApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractiveGridApp.swift; sourceTree = "<group>"; };
+		5D5697A1295D378100D9CCB8 /* visualLayout.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = visualLayout.txt; sourceTree = "<group>"; };
 		5D6FD1E6286F6F6C008F2487 /* Playground */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Playground; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D6FD1E8286F6F6C008F2487 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		5D8E4617295F2CDA0026E6FD /* DefaultDynamicLayoutGroupProvider+DragStateChangeVisualLayoutProviderTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DefaultDynamicLayoutGroupProvider+DragStateChangeVisualLayoutProviderTest.swift"; sourceTree = "<group>"; };
+		5D8E4619295F2D980026E6FD /* TestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestModel.swift; sourceTree = "<group>"; };
 		5D921DDD2853FF59007C0EE4 /* GridCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridCell.swift; sourceTree = "<group>"; };
 		5DA31B7E29540658004F5C97 /* DefaultDynamicLayoutGroupProvider+DragStateChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DefaultDynamicLayoutGroupProvider+DragStateChange.swift"; sourceTree = "<group>"; };
 		5DDC6445270DDFDD0059AA6D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		5DEA5341295E829A00F41564 /* DragStateChangeTestRunProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragStateChangeTestRunProvider.swift; sourceTree = "<group>"; };
+		5DEA5343295E82CE00F41564 /* DragStateChangeTestRunVisualLayoutProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragStateChangeTestRunVisualLayoutProvider.swift; sourceTree = "<group>"; };
+		5DEA5345295E83EA00F41564 /* TestDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDescription.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +158,12 @@
 			isa = PBXGroup;
 			children = (
 				5D341761294FB24F00654BA6 /* DefaultDynamicLayoutGroupProvider+DragStateChangeTest.swift */,
+				5D8E4619295F2D980026E6FD /* TestModel.swift */,
+				5D8E4617295F2CDA0026E6FD /* DefaultDynamicLayoutGroupProvider+DragStateChangeVisualLayoutProviderTest.swift */,
+				5DEA5341295E829A00F41564 /* DragStateChangeTestRunProvider.swift */,
+				5DEA5343295E82CE00F41564 /* DragStateChangeTestRunVisualLayoutProvider.swift */,
+				5DEA5345295E83EA00F41564 /* TestDescription.swift */,
+				5D5697A1295D378100D9CCB8 /* visualLayout.txt */,
 			);
 			path = "InteractiveGrid-UIKitTests";
 			sourceTree = "<group>";
@@ -364,6 +382,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D5697A2295D378100D9CCB8 /* visualLayout.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,7 +413,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DEA5346295E83EA00F41564 /* TestDescription.swift in Sources */,
+				5D8E4618295F2CDA0026E6FD /* DefaultDynamicLayoutGroupProvider+DragStateChangeVisualLayoutProviderTest.swift in Sources */,
+				5DEA5342295E829A00F41564 /* DragStateChangeTestRunProvider.swift in Sources */,
 				5D341762294FB24F00654BA6 /* DefaultDynamicLayoutGroupProvider+DragStateChangeTest.swift in Sources */,
+				5D8E461A295F2D980026E6FD /* TestModel.swift in Sources */,
+				5DEA5344295E82CE00F41564 /* DragStateChangeTestRunVisualLayoutProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

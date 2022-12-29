@@ -2,43 +2,80 @@ import XCTest
 
 @testable import InteractiveGrid_UIKit
 
+/// This test case uses two special model types named `R` (regular style) and `C` (compact style) to help visually describe grid layout.
+///
+/// "Regular" models span two columns (one per row)
+/// "Compact" models always take up one column (one or two per row). 
 final class DefaultDynamicLayoutGroupProvider_DragStateChangeTest: XCTestCase {
-}
 
-// MARK - Drag "Regular" Item Tests
+}
 
 extension DefaultDynamicLayoutGroupProvider_DragStateChangeTest {
 
-    func testDragRegularItemAtIndexZero_ToNextRowAtIndexOneContainingACompactItem_ItemsEffectivelySwap() {
+    func testDragRegularItemAtIndexZero_ToNextRowAtIndexOneContainingARegularItem_ItemsEffectivelySwap() {
         doTestDeriveProposedDragStateChange(
             forDraggingIndex: 0,
             atCurrentIndex: 0,
             toProposedDropIndex: 1,
             associatedWith: [
-                Model(value: 0, style: .regular),
-                Model(value: 1, style: .compact)
+                R(0),
+                R(1)
             ],
             expectedDragStateChange: (dropIndex: 1, proposedLayoutModels: [
-                Model(value: 1, style: .compact),
-                Model(value: 0, style: .regular)
+                R(1),
+                R(0)
             ])
         )
     }
 
-    func testDragRegularItemAtIndexZero_ToNextRowAtIndexTwoContainingACompactItem_TheRegularItemSwapsWithBothCompactItems() {
+    func testDragRegularItemAtIndexZero_ToNextRowAtIndexOneContainingACompactOrphanItem_ItemsEffectivelySwap() {
         doTestDeriveProposedDragStateChange(
             forDraggingIndex: 0,
             atCurrentIndex: 0,
             toProposedDropIndex: 1,
             associatedWith: [
-                Model(value: 0, style: .regular),
-                Model(value: 1, style: .compact),
-                Model(value: 2, style: .compact)
+                R(0),
+                C(1)
+            ],
+            expectedDragStateChange: (dropIndex: 1, proposedLayoutModels: [
+                C(1),
+                R(0)
+            ])
+        )
+    }
+
+    func testDragRegularItemAtIndexZero_ToNextRowAtIndexContainingACompactLeadingItem_TheRegularItemSwapsWithBothCompactLeadingAndCompactTrailing() {
+
+        // Important: The proposed drag index dynamically adjusts to mimic the user dropping on the "compact trailing"
+        // item. This effectively moves the "compact" row above the "regular" row.
+
+        doTestDeriveProposedDragStateChange(
+            forDraggingIndex: 0,
+            atCurrentIndex: 0,
+            toProposedDropIndex: 1,
+            associatedWith: [
+                R(0),
+                C(1), C(2)
             ],
             expectedDragStateChange: (dropIndex: 2, proposedLayoutModels: [
-                Model(value: 1, style: .compact),
-                Model(value: 2, style: .compact),
-                Model(value: 0, style: .regular)
+                C(1), C(2),
+                R(0)
+            ])
+        )
+    }
+
+    func testDragRegularItemAtIndexZero_ToNextRowAtIndexContainingACompactTrailingItem_TheRegularItemSwapsWithBothCompactLeadingAndCompactTrailing() {
+        doTestDeriveProposedDragStateChange(
+            forDraggingIndex: 0,
+            atCurrentIndex: 0,
+            toProposedDropIndex: 2,
+            associatedWith: [
+                R(0),
+                C(1), C(2)
+            ],
+            expectedDragStateChange: (dropIndex: 2, proposedLayoutModels: [
+                C(1), C(2),
+                R(0)
             ])
         )
     }
@@ -54,18 +91,14 @@ extension DefaultDynamicLayoutGroupProvider_DragStateChangeTest {
             atCurrentIndex: 2,
             toProposedDropIndex: 0,
             associatedWith: [
-                Model(value: 0, style: .compact),
-                Model(value: 1, style: .compact),
-                Model(value: 2, style: .regular),
-                Model(value: 3, style: .compact),
-                Model(value: 4, style: .compact)
+                C(0), C(1),
+                R(2),
+                C(3), C(4)
             ],
             expectedDragStateChange: (dropIndex: 0, proposedLayoutModels: [
-                Model(value: 2, style: .regular),
-                Model(value: 0, style: .compact),
-                Model(value: 1, style: .compact),
-                Model(value: 3, style: .compact),
-                Model(value: 4, style: .compact)
+                R(2),
+                C(0), C(1),
+                C(3), C(4)
             ])
         )
     }
@@ -76,18 +109,14 @@ extension DefaultDynamicLayoutGroupProvider_DragStateChangeTest {
             atCurrentIndex: 2,
             toProposedDropIndex: 1,
             associatedWith: [
-                Model(value: 0, style: .compact),
-                Model(value: 1, style: .compact),
-                Model(value: 2, style: .regular),
-                Model(value: 3, style: .compact),
-                Model(value: 4, style: .compact)
+                C(0), C(1),
+                R(2),
+                C(3), C(4)
             ],
             expectedDragStateChange: (dropIndex: 0, proposedLayoutModels: [
-                Model(value: 2, style: .regular),
-                Model(value: 0, style: .compact),
-                Model(value: 1, style: .compact),
-                Model(value: 3, style: .compact),
-                Model(value: 4, style: .compact)
+                R(2),
+                C(0), C(1),
+                C(3), C(4)
             ])
         )
     }
@@ -98,19 +127,17 @@ extension DefaultDynamicLayoutGroupProvider_DragStateChangeTest {
             atCurrentIndex: 3,
             toProposedDropIndex: 1,
             associatedWith: [
-                Model(value: 0, style: .regular),
-                Model(value: 1, style: .compact),
-                Model(value: 2, style: .compact),
-                Model(value: 3, style: .regular),
-                Model(value: 4, style: .compact)
+                R(0),
+                C(1), C(2),
+                R(3),
+                C(4)
 
             ],
             expectedDragStateChange: (dropIndex: 1, proposedLayoutModels: [
-                Model(value: 0, style: .regular),
-                Model(value: 3, style: .regular),
-                Model(value: 1, style: .compact),
-                Model(value: 2, style: .compact),
-                Model(value: 4, style: .compact)
+                R(0),
+                R(3),
+                C(1), C(2),
+                C(4)
             ])
         )
     }
@@ -121,18 +148,14 @@ extension DefaultDynamicLayoutGroupProvider_DragStateChangeTest {
             atCurrentIndex: 0,
             toProposedDropIndex: 1,
             associatedWith: [
-                Model(value: 1, style: .regular),
-                Model(value: 2, style: .compact),
-                Model(value: 3, style: .compact),
-                Model(value: 4, style: .compact),
-                Model(value: 5, style: .compact)
+                R(0),
+                C(1), C(2),
+                C(3), C(4)
             ],
             expectedDragStateChange: (dropIndex: 2, proposedLayoutModels: [
-                Model(value: 2, style: .compact),
-                Model(value: 3, style: .compact),
-                Model(value: 1, style: .regular),
-                Model(value: 4, style: .compact),
-                Model(value: 5, style: .compact)
+                C(1), C(2),
+                R(0),
+                C(3), C(4)
             ])
         )
     }
@@ -143,40 +166,17 @@ extension DefaultDynamicLayoutGroupProvider_DragStateChangeTest {
             atCurrentIndex: 0,
             toProposedDropIndex: 1,
             associatedWith: [
-                Model(value: 1, style: .regular),
-                Model(value: 2, style: .compact),
-                Model(value: 3, style: .regular),
-                Model(value: 4, style: .compact),
-                Model(value: 5, style: .compact)
+                R(0),
+                C(1),
+                R(2),
+                C(3), C(4)
             ],
             expectedDragStateChange: (dropIndex: 1, proposedLayoutModels: [
-                Model(value: 2, style: .compact),
-                Model(value: 1, style: .regular),
-                Model(value: 3, style: .regular),
-                Model(value: 4, style: .compact),
-                Model(value: 5, style: .compact)
-            ])
-        )
-    }
+                C(1),
+                R(0),
+                R(2),
+                C(3), C(4)
 
-    func testTODO_ProvideDescriptiveName_8() {
-        doTestDeriveProposedDragStateChange(
-            forDraggingIndex: 0,
-            atCurrentIndex: 0,
-            toProposedDropIndex: 1,
-            associatedWith: [
-                Model(value: 1, style: .regular),
-                Model(value: 2, style: .compact),
-                Model(value: 3, style: .regular),
-                Model(value: 4, style: .compact),
-                Model(value: 5, style: .compact)
-            ],
-            expectedDragStateChange: (dropIndex: 1, proposedLayoutModels: [
-                Model(value: 2, style: .compact),
-                Model(value: 1, style: .regular),
-                Model(value: 3, style: .regular),
-                Model(value: 4, style: .compact),
-                Model(value: 5, style: .compact)
             ])
         )
     }
@@ -187,19 +187,18 @@ extension DefaultDynamicLayoutGroupProvider_DragStateChangeTest {
             atCurrentIndex: 3,
             toProposedDropIndex: 2,
             associatedWith: [
-                Model(value: 0, style: .compact),
-                Model(value: 1, style: .compact),
-                Model(value: 2, style: .compact),
-                Model(value: 3, style: .regular)
+                C(0), C(1),
+                C(2),
+                R(3)
             ],
             expectedDragStateChange: (dropIndex: 2, proposedLayoutModels: [
-                Model(value: 0, style: .compact),
-                Model(value: 1, style: .compact),
-                Model(value: 3, style: .regular),
-                Model(value: 2, style: .compact)
+                C(0), C(1),
+                R(3),
+                C(2)
             ])
         )
     }
+
 
     func testTODO_ProvideDescriptiveName_10() {
         doTestDeriveProposedDragStateChange(
@@ -207,14 +206,13 @@ extension DefaultDynamicLayoutGroupProvider_DragStateChangeTest {
             atCurrentIndex: 1,
             toProposedDropIndex: 0,
             associatedWith: [
-                Model(value: 0, style: .regular),
-                Model(value: 1, style: .compact),
-                Model(value: 2, style: .compact)
+                R(0),
+                C(1), C(2)
             ],
             expectedDragStateChange: (dropIndex: 0, proposedLayoutModels: [
-                Model(value: 1, style: .compact),
-                Model(value: 0, style: .regular),
-                Model(value: 2, style: .compact)
+                C(1),
+                R(0),
+                C(2)
             ])
         )
     }
@@ -226,14 +224,12 @@ extension DefaultDynamicLayoutGroupProvider_DragStateChangeTest {
             atCurrentIndex: 2,
             toProposedDropIndex: 1,
             associatedWith: [
-                Model(value: 0, style: .regular),
-                Model(value: 1, style: .compact),
-                Model(value: 2, style: .compact)
+                R(0),
+                C(1), C(2)
             ],
             expectedDragStateChange: (dropIndex: 0, proposedLayoutModels: [
-                Model(value: 0, style: .regular),
-                Model(value: 1, style: .compact),
-                Model(value: 2, style: .compact)
+                R(0),
+                C(1), C(2)
             ])
         )
     }
@@ -244,14 +240,12 @@ extension DefaultDynamicLayoutGroupProvider_DragStateChangeTest {
             atCurrentIndex: 2,
             toProposedDropIndex: 0,
             associatedWith: [
-                Model(value: 0, style: .regular),
-                Model(value: 1, style: .compact),
-                Model(value: 2, style: .compact)
+                R(0),
+                C(1), C(2)
             ],
             expectedDragStateChange: (dropIndex: 0, proposedLayoutModels: [
-                Model(value: 0, style: .regular),
-                Model(value: 1, style: .compact),
-                Model(value: 2, style: .compact)
+                R(0),
+                C(1), C(2)
             ])
         )
     }
@@ -262,12 +256,12 @@ extension DefaultDynamicLayoutGroupProvider_DragStateChangeTest {
             atCurrentIndex: 0,
             toProposedDropIndex: 1,
             associatedWith: [
-                Model(value: 0, style: .regular),
-                Model(value: 1, style: .compact)
+                R(0),
+                C(1)
             ],
             expectedDragStateChange: (dropIndex: 1, proposedLayoutModels: [
-                Model(value: 1, style: .compact),
-                Model(value: 0, style: .regular)
+                C(1),
+                R(0)
             ])
         )
     }
@@ -278,12 +272,12 @@ extension DefaultDynamicLayoutGroupProvider_DragStateChangeTest {
             atCurrentIndex: 1,
             toProposedDropIndex: 0,
             associatedWith: [
-                Model(value: 0, style: .regular),
-                Model(value: 1, style: .compact)
+                R(0),
+                C(1)
             ],
             expectedDragStateChange: (dropIndex: 0, proposedLayoutModels: [
-                Model(value: 1, style: .compact),
-                Model(value: 0, style: .regular)
+                C(1),
+                R(0)
             ])
         )
     }
@@ -294,17 +288,16 @@ extension DefaultDynamicLayoutGroupProvider_DragStateChangeTest {
             atCurrentIndex: 2,
             toProposedDropIndex: 3,
             associatedWith: [
-                Model(value: 0, style: .compact),
-                Model(value: 1, style: .regular),
-                Model(value: 2, style: .compact),
-                Model(value: 3, style: .regular)
-
+                C(0),
+                R(1),
+                C(2),
+                R(3)
             ],
             expectedDragStateChange: (dropIndex: 3, proposedLayoutModels: [
-                Model(value: 0, style: .compact),
-                Model(value: 1, style: .regular),
-                Model(value: 3, style: .regular),
-                Model(value: 2, style: .compact)
+                C(0),
+                R(1),
+                R(3),
+                C(2)
             ])
         )
     }
@@ -315,17 +308,31 @@ extension DefaultDynamicLayoutGroupProvider_DragStateChangeTest {
             atCurrentIndex: 3,
             toProposedDropIndex: 2,
             associatedWith: [
-                Model(value: 0, style: .compact),
-                Model(value: 1, style: .regular),
-                Model(value: 2, style: .compact),
-                Model(value: 3, style: .regular)
-
+                C(0),
+                R(1),
+                C(2),
+                R(3)
             ],
             expectedDragStateChange: (dropIndex: 2, proposedLayoutModels: [
-                Model(value: 0, style: .compact),
-                Model(value: 1, style: .regular),
-                Model(value: 3, style: .regular),
-                Model(value: 2, style: .compact)
+                C(0),
+                R(1),
+                R(3),
+                C(2)
+            ])
+        )
+    }
+
+    func testTODO_ProvideDescriptiveName_17() {
+        doTestDeriveProposedDragStateChange(
+            forDraggingIndex: 0,
+            atCurrentIndex: 0,
+            toProposedDropIndex: 1,
+            associatedWith: [
+                C(0), C(1)
+
+            ],
+            expectedDragStateChange: (dropIndex: 1, proposedLayoutModels: [
+                C(1), C(0)
             ])
         )
     }
@@ -336,17 +343,15 @@ extension DefaultDynamicLayoutGroupProvider_DragStateChangeTest {
             atCurrentIndex: 1,
             toProposedDropIndex: 3,
             associatedWith: [
-                Model(value: 0, style: .regular),
-                Model(value: 1, style: .compact),
-                Model(value: 2, style: .compact),
-                Model(value: 3, style: .regular)
-
+                R(0),
+                C(1), C(2),
+                R(3)
             ],
             expectedDragStateChange: (dropIndex: 3, proposedLayoutModels: [
-                Model(value: 0, style: .regular),
-                Model(value: 2, style: .compact),
-                Model(value: 3, style: .regular),
-                Model(value: 1, style: .compact)
+                R(0),
+                C(2),
+                R(3),
+                C(1)
             ])
         )
     }
@@ -357,21 +362,17 @@ extension DefaultDynamicLayoutGroupProvider_DragStateChangeTest {
             atCurrentIndex: 1,
             toProposedDropIndex: 3,
             associatedWith: [
-                Model(value: 0, style: .regular),
-                Model(value: 1, style: .compact),
-                Model(value: 2, style: .compact),
-                Model(value: 3, style: .regular),
-                Model(value: 4, style: .compact),
-                Model(value: 5, style: .compact)
-
+                R(0),
+                C(1), C(2),
+                R(3),
+                C(4), C(5)
             ],
             expectedDragStateChange: (dropIndex: 3, proposedLayoutModels: [
-                Model(value: 0, style: .regular),
-                Model(value: 2, style: .compact),
-                Model(value: 3, style: .regular),
-                Model(value: 1, style: .compact),
-                Model(value: 4, style: .compact),
-                Model(value: 5, style: .compact)
+                R(0),
+                C(2),
+                R(3),
+                C(1), C(4),
+                C(5)
             ])
         )
     }
@@ -383,17 +384,18 @@ extension DefaultDynamicLayoutGroupProvider_DragStateChangeTest {
         forDraggingIndex draggingIndex: Int,
         atCurrentIndex currentIndex: Int,
         toProposedDropIndex proposedDropIndex: Int,
-        associatedWith models: [Model],
-        expectedDragStateChange: (dropIndex: Int, proposedLayoutModels: [Model])
+        associatedWith models: [TestModel],
+        expectedDragStateChange: (dropIndex: Int, proposedLayoutModels: [TestModel]),
+        line: UInt = #line
     ) {
 
         let (actualProposedLayoutModels, actualDropIndex) = DefaultDynamicLayoutGroupProvider.deriveProposedDragStateChange(
             forDraggingIndex: draggingIndex,
             atCurrentIndex: currentIndex,
             toProposedDropIndex: proposedDropIndex,
-            models: models
+            models: models.map { $0.makeModel() }
         )
-        XCTAssertEqual(expectedDragStateChange.dropIndex, actualDropIndex)
-        XCTAssertEqual(expectedDragStateChange.proposedLayoutModels, actualProposedLayoutModels)
+        XCTAssertEqual(expectedDragStateChange.dropIndex, actualDropIndex, line: line)
+        XCTAssertEqual(expectedDragStateChange.proposedLayoutModels.map { $0.makeModel() }, actualProposedLayoutModels, line: line)
     }
 }

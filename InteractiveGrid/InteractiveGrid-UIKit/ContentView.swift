@@ -46,10 +46,7 @@ extension Model {
         return [
             Model(value: 1, style: .compact, allowsContextMenu: true),
             Model(value: 2, style: .compact, allowsContextMenu: true),
-            Model(value: 3, style: .compact, allowsContextMenu: true),
-            Model(value: 4, style: .compact, allowsContextMenu: true),
-            Model(value: 5, style: .compact, allowsContextMenu: true),
-            Model(value: 6, style: .compact, allowsContextMenu: true)
+            
         ]
     }
 
@@ -57,10 +54,10 @@ extension Model {
         return [
             Model(value: 1, style: .regular, allowsContextMenu: false),
             Model(value: 2, style: .regular, allowsContextMenu: false),
-            Model(value: 3, style: .regular, allowsContextMenu: false),
-            Model(value: 4, style: .regular, allowsContextMenu: false),
-            Model(value: 5, style: .regular, allowsContextMenu: false),
-            Model(value: 6, style: .regular, allowsContextMenu: false)
+//            Model(value: 3, style: .regular, allowsContextMenu: false),
+//            Model(value: 4, style: .regular, allowsContextMenu: false),
+//            Model(value: 5, style: .regular, allowsContextMenu: false),
+//            Model(value: 6, style: .regular, allowsContextMenu: false)
         ]
     }
 
@@ -68,8 +65,8 @@ extension Model {
         return [
             Model(value: 0, style: .regular, allowsContextMenu: true),
             Model(value: 1, style: .compact, allowsContextMenu: true),
-            Model(value: 2, style: .compact, allowsContextMenu: true),
-            Model(value: 3, style: .regular, allowsContextMenu: true),
+            
+//            Model(value: 3, style: .regular, allowsContextMenu: true),
 //            Model(value: 4, style: .compact, allowsContextMenu: true),
 //            Model(value: 5, style: .compact, allowsContextMenu: true),
 //            Model(value: 6, style: .regular, allowsContextMenu: true),

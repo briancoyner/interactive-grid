@@ -19,7 +19,7 @@ extension DefaultDynamicLayoutGroupProvider {
         let target = models[proposedDropIndex]
         switch (source.style, target.style) {
         case (.compact, .compact):
-            move(modelAtIndex: draggingIndex, toOffset: newDropIndex, models: &copy)
+            move(modelAtIndex: draggingIndex, toOffset: newDropIndex + 1, models: &copy)
         case (.compact, .regular):
             let dragDirection = DragDirection(currentIndex: currentIndex, proposedDropIndex: newDropIndex)
             switch dragDirection {
@@ -60,7 +60,7 @@ extension DefaultDynamicLayoutGroupProvider {
                 }
             }
         case (.regular, .regular):
-            move(modelAtIndex: draggingIndex, toOffset: newDropIndex, models: &copy)
+            move(modelAtIndex: draggingIndex, toOffset: newDropIndex + 1, models: &copy)
         case (.regular, .compact):
             let dragDirection = DragDirection(currentIndex: currentIndex, proposedDropIndex: newDropIndex)
             switch dragDirection {
