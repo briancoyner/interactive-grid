@@ -97,6 +97,20 @@ extension InteractiveGridViewController: UICollectionViewDragDelegate {
     }
 
     func collectionView(
+        _ collectionView: UICollectionView,
+        dropSessionDidUpdate session: UIDropSession,
+        withDestinationIndexPath destinationIndexPath: IndexPath?
+    ) -> UICollectionViewDropProposal {
+
+        if destinationIndexPath == nil {
+            print("%%%% Cancelling")
+            return UICollectionViewDropProposal(operation: .cancel)
+        } else {
+            return UICollectionViewDropProposal(operation: .move, intent: .insertAtDestinationIndexPath)
+        }
+    }
+
+    func collectionView(
         _: UICollectionView,
         targetIndexPathForMoveOfItemFromOriginalIndexPath originalIndexPath: IndexPath,
         atCurrentIndexPath currentIndexPath: IndexPath,
@@ -107,7 +121,7 @@ extension InteractiveGridViewController: UICollectionViewDragDelegate {
         let currentItem = dataSource.itemIdentifier(for: currentIndexPath)
         let proposedItem = dataSource.itemIdentifier(for: proposedIndexPath)
 
-        print("##### \(draggedItem!); \(currentItem!); \(proposedItem!)")
+        print("\n##### \(draggedItem!); \(currentItem!); \(proposedItem!)")
         print("##### \(originalIndexPath.item); \(currentIndexPath.item); \(proposedIndexPath.item)")
         print("##### \(dataSource.snapshot().itemIdentifiers)")
 
@@ -128,7 +142,7 @@ extension InteractiveGridViewController: UICollectionViewDragDelegate {
         )
 
         self.proposedDragItems = proposedDragItems
-        print("##### \(dropIndex), \(proposedDragItems)")
+        print("%%%% \(dropIndex), \(proposedDragItems)")
         return IndexPath(item: dropIndex, section: 0)
     }
 
@@ -380,6 +394,7 @@ extension InteractiveGridViewController {
             // around as the user drags a lifted cell.
             let items = self.proposedDragItems ?? self.dataSource.snapshot().itemIdentifiers
             let styles = items.map { $0.style }
+            print("%%%% LAYOUT: \(items)")
             if styles.isEmpty {
                 return nil
             }
@@ -521,6 +536,9 @@ extension InteractiveGridViewController {
             // New items are set when the user starts dragging again.
             self?.proposedDragItems = nil
 
+            print("%%%% (drop complete) \(value.finalSnapshot.itemIdentifiers)")
+
+//            self?.collectionView.collectionViewLayout.invalidateLayout()
             // TODO: "coding by coincidence": This was hacked in to see if it would help the collection view
             // correctly handle the situation where a "compact leading" is dragged down to a "regular". The
             // unit test should what should happen. This seems to force the view to behave correctly, but it's

@@ -17,13 +17,14 @@ extension DefaultDynamicLayoutGroupProvider {
 
         let source = models[draggingIndex]
         let target = models[proposedDropIndex]
+
         switch (source.style, target.style) {
         case (.compact, .compact):
-            move(modelAtIndex: draggingIndex, toOffset: newDropIndex + 1, models: &copy)
+            pivot(modelBeingDraggedAtIndex: draggingIndex, toIndex: newDropIndex, models: &copy)
         case (.compact, .regular):
             let dragDirection = DragDirection(currentIndex: currentIndex, proposedDropIndex: newDropIndex)
             switch dragDirection {
-            case .up:
+            case .preceding:
                 let indexedRowStyles = derivedIndexRowStyles(for: models)
                 let proposedRowStyle = indexedRowStyles[proposedDropIndex]
                 switch proposedRowStyle {
@@ -40,14 +41,15 @@ extension DefaultDynamicLayoutGroupProvider {
                     newDropIndex = proposedDropIndex
                     pivot(modelBeingDraggedAtIndex: draggingIndex, toIndex: newDropIndex, models: &copy)
                 }
-            case .down:
+            case .succeeding:
                 let indexedRowStyles = derivedIndexRowStyles(for: models)
-
+//                print("%%%% \(indexedRowStyles)")
                 let proposedRowStyle = indexedRowStyles[proposedDropIndex]
                 switch proposedRowStyle {
                 case .regular:
                     newDropIndex = proposedDropIndex
                     pivot(modelBeingDraggedAtIndex: draggingIndex, toIndex: newDropIndex, models: &copy)
+                    print("%%%% \(derivedIndexRowStyles(for: copy))")
                 case .compactLeading:
                     newDropIndex = proposedDropIndex
                     move(modelAtIndex: draggingIndex, toOffset: newDropIndex, models: &copy)
@@ -64,7 +66,7 @@ extension DefaultDynamicLayoutGroupProvider {
         case (.regular, .compact):
             let dragDirection = DragDirection(currentIndex: currentIndex, proposedDropIndex: newDropIndex)
             switch dragDirection {
-            case .up:
+            case .preceding:
                 let indexedRowStyles = derivedIndexRowStyles(for: models)
                 let proposedRowStyle = indexedRowStyles[proposedDropIndex]
                 switch proposedRowStyle {
@@ -81,7 +83,7 @@ extension DefaultDynamicLayoutGroupProvider {
                     newDropIndex = proposedDropIndex
                     pivot(modelBeingDraggedAtIndex: draggingIndex, toIndex: newDropIndex, models: &copy)
                 }
-            case .down:
+            case .succeeding:
                 let successorToProposedDropIndex = proposedDropIndex + 1
                 let clamp = min(copy.count - 1, successorToProposedDropIndex)
                 let check = models[clamp]
@@ -185,11 +187,11 @@ extension DefaultDynamicLayoutGroupProvider {
     }
 
     private enum DragDirection: Int {
-        case up = -1
-        case down = 1
+        case preceding = -1
+        case succeeding = 1
 
         init(currentIndex: Int, proposedDropIndex: Int) {
-            self = currentIndex < proposedDropIndex ? .down : .up
+            self = currentIndex < proposedDropIndex ? .succeeding : .preceding
         }
     }
 }
